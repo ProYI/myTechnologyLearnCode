@@ -2,6 +2,7 @@ package online.proyi.interview.question.singleton;
 
 /**
  * 单例模式 - 懒汉式 - 线程安全
+ * 不推荐使用
  */
 public class Singleton4 {
     private static Singleton4 instance = null;
