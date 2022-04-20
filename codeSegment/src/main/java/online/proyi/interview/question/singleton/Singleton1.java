@@ -4,7 +4,7 @@ package online.proyi.interview.question.singleton;
  * 单例模式 - 懒汉式 - 线程不安全
  */
 public class Singleton1 {
-    private static Singleton1 instance = null;
+    private static Singleton1 instance;
 
     // 私有构造函数
     public Singleton1() {

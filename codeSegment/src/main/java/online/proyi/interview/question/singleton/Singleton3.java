@@ -1,7 +1,7 @@
 package online.proyi.interview.question.singleton;
 
 /**
- * 单例模式 - 懒汉式 - 线程安全
+ * 单例模式 - 饿汉式 - 线程安全
  * 静态代码块
  */
 public class Singleton3 {
