@@ -1,4 +1,4 @@
-package online.proyi.codeSegment.thread.deadLock;
+package online.proyi.codeSegment.concurrency.deadLock;
 
 /**
  * 死锁
