@@ -1,4 +1,4 @@
-package online.proyi.interview.question.singleton;
+package online.proyi.designPatterns._1_singleton;
 
 /**
  * 单例模式 - 静态内部类 - 线程安全

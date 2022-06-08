@@ -1,4 +1,4 @@
-package online.proyi.interview.question.singleton;
+package online.proyi.designPatterns._1_singleton;
 
 /**
  * 单例模式 - 饿汉式 - 线程安全
