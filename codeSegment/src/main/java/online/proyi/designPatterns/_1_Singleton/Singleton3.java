@@ -1,4 +1,4 @@
-package online.proyi.designPatterns._1_singleton;
+package online.proyi.designPatterns._1_Singleton;
 
 /**
  * 单例模式 - 饿汉式 - 线程安全
