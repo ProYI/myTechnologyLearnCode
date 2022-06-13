@@ -22,6 +22,9 @@ public class Client {
     public static void main(String[] args) {
         int type = 1;
         Product product = new SimpleFactory().createProduct(type);
+        product.doSomething();
         // do something with product
+        Product product1 = new SimpleFactory().createProduct(ConcreteProduct.class);
+        product1.doSomething();
     }
 }
