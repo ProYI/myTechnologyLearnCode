@@ -1,19 +1,10 @@
 HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
+**/target/
 !**/src/main/**
 !**/src/test/**
-# Compiled class file
-*.class
 
 # Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+**/*.log
 
 # Package Files #
 *.jar
@@ -52,3 +43,10 @@ temp/
 .springBeans
 .sts4-cache
 .log
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
