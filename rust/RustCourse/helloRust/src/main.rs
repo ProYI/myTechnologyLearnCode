@@ -31,7 +31,9 @@ fn main() {
     // base_type::nan_demo2();
     // base_type::number_demo();
     // base_type::range_demo();
-    base_type::complex_num();
+    // base_type::complex_num();
+    // base_type::char_demo();
+    base_type::bool_demo();
 }
 
 fn greet_world() {

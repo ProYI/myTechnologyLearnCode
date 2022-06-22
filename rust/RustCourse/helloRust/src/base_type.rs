@@ -132,3 +132,48 @@ pub fn complex_num() {
     println!("{} + {}i", result.re, result.im)
 }
 
+/**
+ 字符类型 char
+
+Rust 的字符不仅仅是 ASCII，
+所有的 Unicode 值都可以作为 Rust 字符，包括单个的中文、日文、韩文、emoji 表情符号等等，都是合法的字符类型
+字符类型占用 4 个字节
+ */
+pub fn char_demo() {
+    let x = '中';
+    println!("字符'中'占用了{}字节的内存大小",std::mem::size_of_val(&x));
+}
+
+/**
+ 布尔 （bool）
+
+true 和 false
+布尔值占用内存的大小为 1 个字节
+ */
+pub fn bool_demo() {
+    let t = false;
+
+    let f: bool = true; // 使用类型标注,显式指定f的类型
+
+    if f {
+        println!("这是段毫无意义的代码");
+    }
+}
+
+/**
+ 单元类型 （）
+ 唯一值也是 （）
+
+main 函数就返回这个单元类型 ()
+不能说 main 函数无返回值，
+因为没有返回值的函数在 Rust 中是有单独的定义的：发散函数( diverge function )
+顾名思义，无法收敛的函数
+
+常见的 println!() 的返回值也是单元类型 ()
+
+用 () 作为 map 的值，表示我们不关注具体的值，只关注 key
+可以作为一个值用来占位，但是完全不占用任何内存
+ */
+pub fn unit_demo() {
+
+}
