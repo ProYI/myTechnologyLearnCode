@@ -4,17 +4,24 @@ use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
 
 fn main() {
-    greet_world();
-    let stdout = stdout();
-    let message = String::from("Hello fellow Rustaceans!");
-    let width = message.chars().count();
+    // greet_world();
+    // let stdout = stdout();
+    // let message = String::from("Hello fellow Rustaceans!");
+    // let width = message.chars().count();
+    //
+    // let mut writer = BufWriter::new(stdout.lock());
+    // say(message.as_bytes(), width, &mut writer).unwrap();
+    //
+    // println!("{}", "------------");
+    //
+    // test_funcation();
 
-    let mut writer = BufWriter::new(stdout.lock());
-    say(message.as_bytes(), width, &mut writer).unwrap();
-
-    println!("{}", "------------");
-
-    test_funcation();
+    println!("{}", "------------variables------------ ");
+    // variables::variables_1();
+    // variables::variables_2();
+    // variables::variables_3();
+    // variables::variables_4();
+    variables::variables_5();
 }
 
 fn greet_world() {
@@ -42,7 +49,7 @@ fn test_funcation() {
         }
         let fields: Vec<_> = record.split(",").map(|field| field.trim()).collect();
         if cfg!(debug_assertions) {
-            eprint!("debug:{:?} -> {:?}", record, fields);
+            eprintln!("debug:{:?} -> {:?}", record, fields);
         }
         let name = fields[0];
 
