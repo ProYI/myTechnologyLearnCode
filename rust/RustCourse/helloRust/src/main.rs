@@ -1,4 +1,5 @@
 mod variables;
+mod base_type;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -16,12 +17,21 @@ fn main() {
     //
     // test_funcation();
 
-    println!("{}", "------------variables------------ ");
+    // println!("{}", "------------variables------------ ");
     // variables::variables_1();
     // variables::variables_2();
     // variables::variables_3();
     // variables::variables_4();
-    variables::variables_5();
+    // variables::variables_5();
+
+    println!("{}", "------------baseType------------ ");
+    // base_type::baseType();
+    // base_type::float_demo();
+    // base_type::nan_demo();
+    // base_type::nan_demo2();
+    // base_type::number_demo();
+    // base_type::range_demo();
+    base_type::complex_num();
 }
 
 fn greet_world() {
