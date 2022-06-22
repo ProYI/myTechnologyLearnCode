@@ -271,7 +271,6 @@ pub fn fn_in_or_return_demo() {
     // 但 i32 是 Copy 的，所以在后面可继续使用 x
     // 基础类型在栈上copy
     println!("the value of x : {}", x);
-
 } // 这里, x 先移出了作用域，然后是 s。但因为 s 的值已被移走，
 // 所以不会有特殊操作
 
@@ -307,4 +306,71 @@ fn gives_ownership() -> String {             // gives_ownership 将返回值移�
 fn takes_and_gives_back(a_string: String) -> String { // a_string 进入作用域
 
     a_string  // 返回 a_string 并移出给调用的函数
+}
+
+/**
+引用与借用
+
+获取变量的引用，称之为借用(borrowing)
+
+ */
+pub fn borrowing_demo() {
+    let x = 5;
+    //使用 解引用 运算符 来解出 y 所使用的值
+    let y = &x;
+
+    assert_eq!(5, x);
+    assert_eq!(5, *y);
+}
+
+/**
+不可变引用
+let s : String
+
+&s 为不可变引用
+
+正如变量默认不可变一样，引用指向的值默认也是不可变的
+ */
+pub fn quote_demo() {
+    let s1 = String::from("hello");
+
+    //通过 &s1 语法，我们创建了一个指向 s1 的引用，但是并不拥有它
+    //因为并不拥有这个值，当引用离开作用域后，其指向的值也不会被丢弃
+    let len = calculate_length(&s1);
+
+    println!("The length of '{}' is {}.", s1, len);
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+
+
+pub fn quote_demo2() {
+    let s = String::from("hello");
+    change(&s);
+}
+
+fn change(some_string: &String) {
+    // 编译无法通过，引用指向的值默认不可变，所以不可修改
+    // some_string.push_str(", world");
+}
+
+/**
+ 可变引用
+let mut s : String
+&mnt s 为可变引用
+
+同一作用域，特定数据只能有一个可变引用
+
+可变引用与不可变引用不能同时存在
+ */
+pub fn quote_demo3() {
+    let mut s = String::from("hello");
+    change3(&mut s);
+    println!("the valus of s : {}", s)
+}
+
+fn change3(some_string: &mut String) {
+    some_string.push_str(", world");
 }

@@ -38,7 +38,10 @@ fn main() {
     // base_type::expression_demo();
     // base_type::fn_demo();
     // base_type::fn_in_or_return_demo();
-    base_type::fn_return_owner_demo();
+    // base_type::fn_return_owner_demo();
+    // base_type::borrowing_demo();
+    // base_type::quote_demo();
+    base_type::quote_demo3();
 }
 
 fn greet_world() {
