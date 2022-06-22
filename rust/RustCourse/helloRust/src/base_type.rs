@@ -1,4 +1,5 @@
 use num::complex::Complex;
+
 /**
 基本类型
 
@@ -22,14 +23,14 @@ use num::complex::Complex;
 
 /**
 类型推导
-*/
+ */
 
 pub fn baseType() {
     //type annotations needed
     // let guess = "42".parse().expect("Not a number!");
 
     // 显示标注
-    let guess1 : u32 = "42".parse().expect("Not a number!");
+    let guess1: u32 = "42".parse().expect("Not a number!");
     let guess2 = "42".parse::<u32>().expect("Not a number!");
     println!("the value is : {}", guess1);
     println!("the value is : {}", guess2);
@@ -61,15 +62,16 @@ pub fn float_demo() {
 }
 
 /**
- NaN
-    not a number
-    处理数学上未定义的结果
+NaN
+   not a number
+   处理数学上未定义的结果
  */
 pub fn nan_demo() {
     let x = (-42.0_f32).sqrt();
     assert_eq!(x, x);
 }
-pub fn nan_demo2()  {
+
+pub fn nan_demo2() {
     let x = (-42.0_f32).sqrt();
     if x.is_nan() {
         println!("未定义的数学行为")
@@ -104,15 +106,15 @@ pub fn number_demo() {
  */
 pub fn range_demo() {
     for i in 1..5 {
-        println!("1..5:  {}",i);
+        println!("1..5:  {}", i);
     }
     for i in 1..=5 {
-        println!("1..=5:  {}",i);
+        println!("1..=5:  {}", i);
     }
 
     // demo
     for i in '你'..='我' {
-        println!("你..=我:  {}",i);
+        println!("你..=我:  {}", i);
     }
 }
 
@@ -141,7 +143,7 @@ Rust 的字符不仅仅是 ASCII，
  */
 pub fn char_demo() {
     let x = '中';
-    println!("字符'中'占用了{}字节的内存大小",std::mem::size_of_val(&x));
+    println!("字符'中'占用了{}字节的内存大小", std::mem::size_of_val(&x));
 }
 
 /**
@@ -174,6 +176,46 @@ main 函数就返回这个单元类型 ()
 用 () 作为 map 的值，表示我们不关注具体的值，只关注 key
 可以作为一个值用来占位，但是完全不占用任何内存
  */
-pub fn unit_demo() {
+pub fn unit_demo() {}
 
+/**
+ 语句和表达式
+Rust 的函数体是由一系列语句组成，最后由一个表达式来返回值
+ */
+
+pub fn add_with_extra(x: i32, y: i32) -> i32 {
+    let x = x + 1; // 语句
+    let y = y + 5; // 语句
+    println!("the value : {}", x + y);
+    x + y             // 表达式,后面不能跟";"
+
+    // let a = 8;
+    // let b: Vec<f64> = Vec::new();
+    // let (a, c) = ("hi", false);
+    //以上都是语句，它们完成了一个具体的操作，但是并没有返回值
+}
+
+/**
+表达式
+表达式会进行求值，然后返回一个值
+
+表达式可以成为语句的一部分
+例如 let y = 6 中，6 就是一个表达式，它在求值后返回一个值 6
+
+调用一个函数是表达式，因为会返回一个值，
+调用宏也是表达式
+用花括号包裹最终返回一个值的语句块也是表达式
+
+总之，能返回值，就是表达式
+ */
+pub fn expression_demo() {
+    let y = {
+        let x = 3;
+        //返回了 x + 1 的值
+        // 注意 x + 1 不能以分号结尾，否则就会从表达式变成语句， 表达式不能包含分号
+
+        x + 1
+    };
+
+    println!("The value of y is: {}", y);
 }

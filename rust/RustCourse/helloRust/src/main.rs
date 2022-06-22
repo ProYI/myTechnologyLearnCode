@@ -33,7 +33,9 @@ fn main() {
     // base_type::range_demo();
     // base_type::complex_num();
     // base_type::char_demo();
-    base_type::bool_demo();
+    // base_type::bool_demo();
+    // let i = base_type::add_with_extra(1,1);
+    base_type::expression_demo();
 }
 
 fn greet_world() {
