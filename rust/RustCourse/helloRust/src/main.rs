@@ -36,7 +36,9 @@ fn main() {
     // base_type::bool_demo();
     // let i = base_type::add_with_extra(1,1);
     // base_type::expression_demo();
-    base_type::fn_demo();
+    // base_type::fn_demo();
+    // base_type::fn_in_or_return_demo();
+    base_type::fn_return_owner_demo();
 }
 
 fn greet_world() {
