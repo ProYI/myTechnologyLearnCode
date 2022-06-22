@@ -219,3 +219,39 @@ pub fn expression_demo() {
 
     println!("The value of y is: {}", y);
 }
+
+/**
+ 函数
+
+函数名和变量名 蛇形命名
+
+位置随意，
+
+函数参数需要标注类型
+
+函数的返回值就是函数体最后一条表达式的返回值,也可以使用 return 提前返回
+
+Rust 中的特殊返回类型
+无返回值()
+
+隐式返回 （）
+use std::fmt::Debug;
+fn report<T: Debug>(item: T) {
+  println!("{:?}", item);
+}
+
+显示返回 （）
+fn clear(text: &mut String) -> () {
+  *text = String::from("");
+}
+
+
+永不返回的发散函数 !
+当用 ! 作函数返回类型的时候，表示该函数永不返回( diverge function )
+ */
+pub fn fn_demo() {
+    fn add(i: i32, j: i32) -> i32 {
+        i + j
+    }
+}
+
