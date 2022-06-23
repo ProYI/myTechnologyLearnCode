@@ -70,7 +70,8 @@ fn main() {
     // compound_type::enum_value_demo();
     // compound_type::enum_type_demo();
     // compound_type::enum_option_demo();
-    compound_type::enum_option_match_demo();
+    // compound_type::enum_option_match_demo();
+    compound_type::array_demo();
 
 
 

@@ -575,11 +575,13 @@ enum PokerCard {
     Diamonds(u8),
     Hearts(u8),
 }
+
 pub fn enum_value_demo() {
     let c1 = PokerCard::Clubs(1);
     let c2 = PokerCard::Diamonds(13);
     let c3 = PokerCard::Spades('A');
 }
+
 /**
 枚举值 多类型枚举成员
  */
@@ -597,8 +599,8 @@ enum Message {
 
 pub fn enum_type_demo() {
     let _m1 = Message::Quit;
-    let m2 = Message::Move{x:1,y:1};
-    let m3 = Message::ChangeColor(255,255,0);
+    let m2 = Message::Move { x: 1, y: 1 };
+    let m3 = Message::ChangeColor(255, 255, 0);
 
     println!("m2 : {:?}", m2)
 }
@@ -621,6 +623,7 @@ pub fn enum_option_demo() {
     println!("some_string : {:?}", some_string);
     println!("absent_number : {:?}", absent_number);
 }
+
 /**
 match 表达式 处理枚举的控制流结构
 
@@ -638,5 +641,37 @@ pub fn enum_option_match_demo() {
     let none = plus_one(None);
     println!("six : {:?}", six);
     println!("none : {:?}", none);
+}
 
+/**
+ 数组
+最常用的数组有两种，第一种是速度很快但是长度固定的 array，
+第二种是可动态增长的但是有性能损耗的 Vector
+
+Vector，是 Rust 的高级类型：集合类型
+
+数组是 Rust 的基本类型，是固定长度的
+
+数组 array 是存储在栈上，性能也非常优秀
+动态数组 Vector 是存储在堆上，因此长度可以动态改变
+ */
+
+pub fn array_demo() {
+    let a = [1, 2, 3, 4, 5];
+
+    let months = ["January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"];
+    // 显示声明
+    let a1: [i32; 5] = [1, 2, 3, 4, 5];
+    // 数组包含5个元素，元素初始化值为3
+    let a2 = [3; 5];
+
+    let first = a[0]; // 获取a数组第一个元素
+    let second = a[1]; // 获取第二个元素
+
+    /**
+    数组切片
+     */
+    let slice: &[i32] = &a[1..3];
+    assert_eq!(slice, &[2, 3]);
 }
