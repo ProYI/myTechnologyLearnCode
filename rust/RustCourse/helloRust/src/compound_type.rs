@@ -535,3 +535,108 @@ pub fn struct_fmt_demo() {
     dbg!(&user);
     println!("rect1 is {:?}", user);
 }
+
+/**
+枚举
+
+枚举类型是一个类型
+它会包含所有可能的枚举成员,
+而枚举值是该类型中的具体某个成员的实例
+
+任何类型的数据都可以放入枚举成员中
+ */
+#[derive(Debug)]
+enum PokerSuit {
+    Clubs,
+    Spades,
+    Diamonds,
+    Hearts,
+}
+
+pub fn enum_demo() {
+    // 通过 :: 操作符来访问 PokerSuit 下的具体成员
+    let heart = PokerSuit::Hearts;
+    let diamond = PokerSuit::Diamonds;
+
+    print_suit(heart);
+    print_suit(diamond);
+}
+
+fn print_suit(card: PokerSuit) {
+    println!("{:?}", card);
+}
+
+/**
+枚举值 有值
+ */
+enum PokerCard {
+    Clubs(u8),
+    Spades(char),
+    Diamonds(u8),
+    Hearts(u8),
+}
+pub fn enum_value_demo() {
+    let c1 = PokerCard::Clubs(1);
+    let c2 = PokerCard::Diamonds(13);
+    let c3 = PokerCard::Spades('A');
+}
+/**
+枚举值 多类型枚举成员
+ */
+#[derive(Debug)]
+enum Message {
+    // 没有任何关联数据
+    Quit,
+    // 包含一个匿名结构体
+    Move { x: i32, y: i32 },
+    //  包含一个 String 字符串
+    Write(String),
+    //  包含三个 i32
+    ChangeColor(i32, i32, i32),
+}
+
+pub fn enum_type_demo() {
+    let _m1 = Message::Quit;
+    let m2 = Message::Move{x:1,y:1};
+    let m3 = Message::ChangeColor(255,255,0);
+
+    println!("m2 : {:?}", m2)
+}
+
+/**
+Option 枚举用于处理空值
+
+两个成员
+一个成员表示含有值：Some(T)
+另一个表示没有值：None
+ */
+
+pub fn enum_option_demo() {
+    let some_number = Some(5);
+    let some_string = Some("a string");
+
+    let absent_number: Option<i32> = None;
+
+    println!("some_number : {:?}", some_number);
+    println!("some_string : {:?}", some_string);
+    println!("absent_number : {:?}", absent_number);
+}
+/**
+match 表达式 处理枚举的控制流结构
+
+ */
+pub fn enum_option_match_demo() {
+    fn plus_one(x: Option<i32>) -> Option<i32> {
+        match x {
+            None => None,
+            Some(i) => Some(i + 1),
+        }
+    }
+
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
+    println!("six : {:?}", six);
+    println!("none : {:?}", none);
+
+}

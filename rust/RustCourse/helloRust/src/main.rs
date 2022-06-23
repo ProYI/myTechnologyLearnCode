@@ -65,7 +65,12 @@ fn main() {
     // compound_type::tuple_use_demo();
     // compound_type::struct_demo();
     // compound_type::tuple_struct_demo();
-    compound_type::struct_fmt_demo();
+    // compound_type::struct_fmt_demo();
+    // compound_type::enum_demo();
+    // compound_type::enum_value_demo();
+    // compound_type::enum_type_demo();
+    // compound_type::enum_option_demo();
+    compound_type::enum_option_match_demo();
 
 
 
