@@ -379,7 +379,7 @@ pub fn tuple_demo() {
 }
 
 /**
- 元组使用场景
+元组使用场景
  */
 pub fn tuple_use_demo() {
     let s1 = String::from("hello");
@@ -395,3 +395,143 @@ fn calculate_length(s: String) -> (String, usize) {
     (s, length)
 }
 
+/**
+结构体 struct
+
+由多种类型组合而成
+可以为内部的每个字段起一个富有含义的名称
+
+一个结构体由几部分组成：
+* 通过关键字 struct 定义
+* 一个清晰明确的结构体 名称
+* 几个有名字的结构体 字段
+
+初始化注意点:
+初始化实例时，每个字段都需要进行初始化
+初始化时的字段顺序不需要和结构体定义时的顺序一致
+ */
+#[derive(Debug)]
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
+pub fn struct_demo() {
+    let user1 = User {
+        username: String::from("张三"),
+        email: String::from("zhangsan@test.com"),
+        active: true,
+        sign_in_count: 1,
+    };
+
+    // 访问
+    println!("The value of user1's username is {}.", user1.username);
+
+    // 必须要将结构体实例声明为可变的，才能修改其中的字段
+    // Rust 不支持将某个结构体某个字段标记为可变
+    let mut user2 = User {
+        username: String::from("李四"),
+        email: String::from("lisi@test.com"),
+        active: true,
+        sign_in_count: 1,
+    };
+    println!("The value of user2's username is {}.", user2.username);
+    println!("The value of user2's email is {}.", user2.email);
+    user2.username = String::from("王五");
+    user2.email = String::from("wangwu@test.com");
+
+    println!("The value of user2's username is {}.", user2.username);
+    println!("The value of user2's email is {}.", user2.email);
+
+    let username = String::from("王五");
+    let email = String::from("wangwu@test.com");
+    // 简化结构体创建
+    let user3 = build_user(email, username);
+    println!("The value of user3's username is {}.", user3.username);
+    println!("The value of user3's email is {}.", user3.email);
+
+    // 结构体更新语法
+    let user4 = User {
+        // 仅修改email，然后其他字段值从user3中获取
+        email: String::from("wangwu001@test.com"),
+
+        //.. 语法表明凡是我们没有显示声明的字段，全部从 user1 中自动获取
+        // 所以必须在   结构体的尾部    使用
+        // 结构体更新语法跟赋值语句 = 非常相像
+        // user3 的部分字段所有权被转移到 user4 中：username 字段发生了所有权转移，作为结果，user3 无法再被使用
+        // 明明有三个字段进行了自动赋值，为何只有 username 发生了所有权转移？
+        // 因为 所有权时，实现了 Copy 特征的类型无需所有权转移，可以直接在赋值时进行 数据拷贝
+        // 因此 active 和 sign_in_count 字段在赋值给 user4 时，仅仅发生了拷贝，而不是所有权转移
+        ..user3
+    };
+    println!("The value of user4's username is {}.", user4.username);
+    println!("The value of user4's email is {}.", user4.email);
+}
+
+fn build_user(email: String, username: String) -> User {
+    User {
+        // ... 省略了 email和username的类型
+        email,
+        username,
+        active: true,
+        sign_in_count: 1,
+    }
+}
+
+/**
+元组结构体(Tuple Struct)
+
+结构体必须要有名称，但是结构体的字段可以没有名称
+
+这种结构体长得很像元组，因此被称为元组结构体
+ */
+struct Color(i32, i32, i32);
+
+struct Point(i32, i32, i32);
+
+pub fn tuple_struct_demo() {
+
+    // 颜色坐标系 x,y,z 字段名可以忽略
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+}
+
+/**
+单元结构体(Unit-like Struct)
+
+没有任何字段和属性
+定义一个类型，但是不关心该类型的内容, 只关心它的行为时，就可以使用 单元结构体
+ */
+pub fn unit_like_struct_demo() {
+    struct AlwaysEqual;
+
+    let subject = AlwaysEqual;
+
+    //不关心 AlwaysEqual 的字段数据，只关心它的行为，因此将它声明为单元结构体，然后再为它实现某个特征
+    // impl SomeTrait for AlwaysEqual {}
+}
+
+/**
+使用 #[derive(Debug)] 来打印结构体的信息
+
+不加会提示我们结构体 Rectangle 没有实现 Display 特征，这是因为如果我们使用 {} 来格式化输出，那对应的类型就必须实现 Display 特征
+
+
+输出 debug 信息的方法，那就是使用 dbg! 宏
+它会拿走表达式的所有权，然后打印出相应的文件名、行号等 debug 信息，表达式的求值结果。
+除此之外，它最终还会把表达式值的所有权返回！
+
+dbg! 输出到标准错误输出 stderr，而 println! 输出到标准输出 stdout
+ */
+
+pub fn struct_fmt_demo() {
+    let username = String::from("王五");
+    let email = String::from("wangwu@test.com");
+    // 简化结构体创建
+    let user = build_user(email, username);
+
+    dbg!(&user);
+    println!("rect1 is {:?}", user);
+}

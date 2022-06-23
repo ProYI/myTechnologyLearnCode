@@ -62,7 +62,10 @@ fn main() {
     // compound_type::string_escape_demo();
     // compound_type::string_utf8_string_demo();
     // compound_type::tuple_demo();
-    compound_type::tuple_use_demo();
+    // compound_type::tuple_use_demo();
+    // compound_type::struct_demo();
+    // compound_type::tuple_struct_demo();
+    compound_type::struct_fmt_demo();
 
 
 
