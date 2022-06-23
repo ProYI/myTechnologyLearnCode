@@ -1,5 +1,6 @@
 mod variables;
 mod base_type;
+mod compound_type;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -24,7 +25,7 @@ fn main() {
     // variables::variables_4();
     // variables::variables_5();
 
-    println!("{}", "------------baseType------------ ");
+    // println!("{}", "------------baseType------------ ");
     // base_type::baseType();
     // base_type::float_demo();
     // base_type::nan_demo();
@@ -41,7 +42,28 @@ fn main() {
     // base_type::fn_return_owner_demo();
     // base_type::borrowing_demo();
     // base_type::quote_demo();
-    base_type::quote_demo3();
+    // base_type::quote_demo3();
+    println!("{}", "------------compoundType------------ ");
+    // compound_type::slice_demo();
+    // compound_type::slice_demo2();
+    // compound_type::other_slice_demo();
+    // compound_type::string_slice();
+    // compound_type::string_parse_demo();
+    // compound_type::string_push_demo();
+    // compound_type::string_insert_demo();
+    // compound_type::string_replace_demo();
+    // compound_type::string_replacen_demo();
+    // compound_type::string_replace_range_demo();
+    // compound_type::string_pop_demo();
+    // compound_type::string_remove_demo();
+    // compound_type::string_truncate_demo();
+    // compound_type::string_clear_demo();
+    // compound_type::string_catenate_demo();
+    // compound_type::string_escape_demo();
+    compound_type::string_utf8_string_demo();
+
+
+
 }
 
 fn greet_world() {
