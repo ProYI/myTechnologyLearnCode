@@ -295,9 +295,10 @@ pub fn string_catenate_demo() {
 
     println!("连接字符串 + -> {}", result);
 }
+
 /**
- 字符串转义
- 可以通过转义的方式 \ 输出 ASCII 和 Unicode 字符
+字符串转义
+可以通过转义的方式 \ 输出 ASCII 和 Unicode 字符
  */
 pub fn string_escape_demo() {
     // 通过 \ + 字符的十六进制表示，转义输出一个字符
@@ -345,5 +346,52 @@ pub fn string_utf8_string_demo() {
     for b in "中国人".bytes() {
         println!("{}", b);
     }
+}
+
+/**
+ 元组 tuple
+
+元组是由多种类型组合到一起形成的，因此它是复合类型
+元组的长度是固定的
+元组中元素的顺序也是固定的
+ */
+pub fn tuple_demo() {
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+    /**
+     * 用模式匹配解构元组
+     *
+     * 解构：用同样的形式把一个复杂对象中的值匹配出来
+     */
+    let (x, y, z) = tup;
+    println!("The value of y is: {}", y);
+
+    /**
+     * 用 . 来访问元组
+     *
+     */
+    let five_hundred = tup.0;
+    let six_point_four = tup.1;
+    let one = tup.2;
+    println!("The value of five_hundredy is: {}", five_hundred);
+    println!("The value of six_point_four is: {}", six_point_four);
+    println!("The value of one is: {}", one);
+}
+
+/**
+ 元组使用场景
+ */
+pub fn tuple_use_demo() {
+    let s1 = String::from("hello");
+
+    let (s2, len) = calculate_length(s1);
+
+    println!("The length of '{}' is {}.", s2, len);
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() 返回字符串的长度
+
+    (s, length)
 }
 

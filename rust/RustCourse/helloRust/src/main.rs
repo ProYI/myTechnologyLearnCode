@@ -60,7 +60,9 @@ fn main() {
     // compound_type::string_clear_demo();
     // compound_type::string_catenate_demo();
     // compound_type::string_escape_demo();
-    compound_type::string_utf8_string_demo();
+    // compound_type::string_utf8_string_demo();
+    // compound_type::tuple_demo();
+    compound_type::tuple_use_demo();
 
 
 
