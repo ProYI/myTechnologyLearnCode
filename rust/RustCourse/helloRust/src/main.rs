@@ -1,6 +1,7 @@
 mod variables;
 mod base_type;
 mod compound_type;
+mod flow_control;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -43,7 +44,7 @@ fn main() {
     // base_type::borrowing_demo();
     // base_type::quote_demo();
     // base_type::quote_demo3();
-    println!("{}", "------------compoundType------------ ");
+    // println!("{}", "------------compoundType------------ ");
     // compound_type::slice_demo();
     // compound_type::slice_demo2();
     // compound_type::other_slice_demo();
@@ -71,7 +72,11 @@ fn main() {
     // compound_type::enum_type_demo();
     // compound_type::enum_option_demo();
     // compound_type::enum_option_match_demo();
-    compound_type::array_demo();
+    // compound_type::array_demo();
+    println!("{}", "------------flowControl------------ ");
+    // flow_control::if_demo();
+    // flow_control::while_demo();
+    flow_control::loop_demo();
 
 
 
