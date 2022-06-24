@@ -2,6 +2,7 @@ mod variables;
 mod base_type;
 mod compound_type;
 mod flow_control;
+mod match_pattern;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -73,10 +74,12 @@ fn main() {
     // compound_type::enum_option_demo();
     // compound_type::enum_option_match_demo();
     // compound_type::array_demo();
-    println!("{}", "------------flowControl------------ ");
+    // println!("{}", "------------flowControl------------ ");
     // flow_control::if_demo();
     // flow_control::while_demo();
-    flow_control::loop_demo();
+    // flow_control::loop_demo();
+    println!("{}", "------------matchPattern------------ ");
+    match_pattern::match_demo();
 
 
 
