@@ -6,6 +6,7 @@ mod match_pattern;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
+use crate::match_pattern::{Coin1, UsState};
 
 fn main() {
     // greet_world();
@@ -79,7 +80,10 @@ fn main() {
     // flow_control::while_demo();
     // flow_control::loop_demo();
     println!("{}", "------------matchPattern------------ ");
-    match_pattern::match_demo();
+    // match_pattern::match_demo();
+    // match_pattern::value_in_cents1(Coin1::Quarter(UsState::Alaska));
+    // match_pattern::value_in_cents2();
+    match_pattern::if_let_demo();
 
 
 
