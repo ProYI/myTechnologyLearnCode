@@ -83,7 +83,9 @@ fn main() {
     // match_pattern::match_demo();
     // match_pattern::value_in_cents1(Coin1::Quarter(UsState::Alaska));
     // match_pattern::value_in_cents2();
-    match_pattern::if_let_demo();
+    // match_pattern::if_let_demo();
+    // match_pattern::while_let_demo();
+    match_pattern::for_demo();
 
 
 
