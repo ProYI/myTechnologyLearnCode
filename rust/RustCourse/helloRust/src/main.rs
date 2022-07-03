@@ -3,6 +3,7 @@ mod base_type;
 mod compound_type;
 mod flow_control;
 mod match_pattern;
+mod method;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -79,13 +80,16 @@ fn main() {
     // flow_control::if_demo();
     // flow_control::while_demo();
     // flow_control::loop_demo();
-    println!("{}", "------------matchPattern------------ ");
+    // println!("{}", "------------matchPattern------------ ");
     // match_pattern::match_demo();
     // match_pattern::value_in_cents1(Coin1::Quarter(UsState::Alaska));
     // match_pattern::value_in_cents2();
     // match_pattern::if_let_demo();
     // match_pattern::while_let_demo();
-    match_pattern::for_demo();
+    // match_pattern::for_demo();
+    println!("{}", "------------method------------ ");
+    // method::method_demo();
+    method::method_demo2();
 
 
 
