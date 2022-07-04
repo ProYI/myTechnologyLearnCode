@@ -4,6 +4,7 @@ mod compound_type;
 mod flow_control;
 mod match_pattern;
 mod method;
+mod generic;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -87,10 +88,16 @@ fn main() {
     // match_pattern::if_let_demo();
     // match_pattern::while_let_demo();
     // match_pattern::for_demo();
-    println!("{}", "------------method------------ ");
+    // println!("{}", "------------method------------ ");
     // method::method_demo();
-    method::method_demo2();
-
+    // method::method_demo2();
+    println!("{}", "------------generic------------ ");
+    // generic::generic_demo();
+    // generic::generic_demo2();
+    // generic::generic_demo3();
+    // generic::generic_demo4();
+    // generic::generic_demo5();
+    generic::generic_demo6();
 
 
 }
