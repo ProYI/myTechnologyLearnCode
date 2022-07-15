@@ -1,4 +1,4 @@
-package org.example.kotlin
+package online.proyi.codeSegment.kotlin
 
 import java.time.LocalDate
 
