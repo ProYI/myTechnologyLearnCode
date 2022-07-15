@@ -10,6 +10,11 @@
             <version>9.2</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.29.0-GA</version>
+        </dependency>
     </dependencies>
     <parent>
         <groupId>online.proyi</groupId>
