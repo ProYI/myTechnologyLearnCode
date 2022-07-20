@@ -5,6 +5,7 @@ mod flow_control;
 mod match_pattern;
 mod method;
 mod generic;
+mod trait_;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -91,13 +92,16 @@ fn main() {
     // println!("{}", "------------method------------ ");
     // method::method_demo();
     // method::method_demo2();
-    println!("{}", "------------generic------------ ");
+    // println!("{}", "------------generic------------ ");
     // generic::generic_demo();
     // generic::generic_demo2();
     // generic::generic_demo3();
     // generic::generic_demo4();
     // generic::generic_demo5();
-    generic::generic_demo6();
+    // generic::generic_demo6();
+    println!("{}", "------------trait------------ ");
+    // trait_::trait_demo1();
+    trait_::trait_demo2();
 
 
 }
