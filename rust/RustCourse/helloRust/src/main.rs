@@ -6,6 +6,7 @@ mod match_pattern;
 mod method;
 mod generic;
 mod trait_;
+mod trait_object;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -99,13 +100,15 @@ fn main() {
     // generic::generic_demo4();
     // generic::generic_demo5();
     // generic::generic_demo6();
-    println!("{}", "------------trait------------ ");
+    // println!("{}", "------------trait------------ ");
     // trait_::trait_demo1();
     // trait_::trait_demo2();
     // trait_::trait_demo3();
     // trait_::trait_demo4();
     // trait_::trait_demo5();
-    trait_::trait_demo6();
+    // trait_::trait_demo6();
+    println!("{}", "------------trait_object------------ ");
+    // trait_object::trait_object_demo1();
 
 
 }
