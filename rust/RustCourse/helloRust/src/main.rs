@@ -101,7 +101,11 @@ fn main() {
     // generic::generic_demo6();
     println!("{}", "------------trait------------ ");
     // trait_::trait_demo1();
-    trait_::trait_demo2();
+    // trait_::trait_demo2();
+    // trait_::trait_demo3();
+    // trait_::trait_demo4();
+    // trait_::trait_demo5();
+    trait_::trait_demo6();
 
 
 }
