@@ -15,6 +15,12 @@
             <artifactId>javassist</artifactId>
             <version>3.29.0-GA</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>3.3.3</version>
+        </dependency>
     </dependencies>
     <parent>
         <groupId>online.proyi</groupId>
