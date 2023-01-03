@@ -67,7 +67,7 @@ impl Screen {
 如果只需要同质（相同类型）集合，更倾向于这种写法：使用泛型和 特征约束
 因为实现更清晰，且性能更好(特征对象，需要在运行时从 vtable 动态查找需要调用的方法)
  */
-pub struct Screen_Generic<T: Draw> {
+struct Screen_Generic<T: Draw> {
     pub components: Vec<T>,
 }
 

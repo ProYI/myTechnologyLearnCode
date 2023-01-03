@@ -7,6 +7,7 @@ mod method;
 mod generic;
 mod trait_;
 mod trait_object;
+mod trait_next;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -109,6 +110,7 @@ fn main() {
     // trait_::trait_demo6();
     println!("{}", "------------trait_object------------ ");
     // trait_object::trait_object_demo1();
+    trait_next::trait_same_named_demo()
 
 
 }
