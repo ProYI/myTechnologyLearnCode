@@ -8,7 +8,8 @@ mod generic;
 mod trait_;
 mod trait_object;
 mod trait_next;
-mod Vector;
+mod vector;
+mod hashmap;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -112,8 +113,10 @@ fn main() {
     // println!("{}", "------------trait_object------------ ");
     // // trait_object::trait_object_demo1();
     // trait_next::trait_same_named_demo();
-    println!("{}", "------------vector------------ ");
-    Vector::vector_demo();
+    // println!("{}", "------------vector------------ ");
+    // vector::vector_demo();
+    println!("{}", "------------hashmap------------ ");
+    hashmap::hashmap_demo();
 
 
 }
