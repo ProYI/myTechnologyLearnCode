@@ -1,4 +1,7 @@
+use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
+use std::hash::{Hash, Hasher};
+use std::ptr::hash;
 
 /**
 HashMap
@@ -135,6 +138,11 @@ pub fn hashmap_demo() {
     SipHash 在中等大小的 Key 上，性能不错
     但是对于小型的 Key （例如整数）或者大型 Key （例如字符串），性能不够好
      */
+    let mut hasher = DefaultHasher::new();
+    let a = "aaaa";
+    a.hash(&mut hasher);
+    let h = hasher.finish();
+    println!("{:?}", h);
 
 
 }
