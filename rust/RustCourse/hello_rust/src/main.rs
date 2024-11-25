@@ -10,6 +10,7 @@ mod trait_object;
 mod trait_next;
 mod vector;
 mod hashmap;
+mod new_test;
 
 use ferris_says::say;
 use std::{io::{stdout, BufWriter}, f32};
@@ -35,9 +36,9 @@ fn main() {
     // variables::variables_4();
     // variables::variables_5();
 
-    // println!("{}", "------------baseType------------ ");
+    println!("{}", "------------baseType------------ ");
     // base_type::baseType();
-    // base_type::float_demo();
+    base_type::float_demo();
     // base_type::nan_demo();
     // base_type::nan_demo2();
     // base_type::number_demo();
@@ -115,8 +116,8 @@ fn main() {
     // trait_next::trait_same_named_demo();
     // println!("{}", "------------vector------------ ");
     // vector::vector_demo();
-    println!("{}", "------------hashmap------------ ");
-    hashmap::hashmap_demo();
+    // println!("{}", "------------hashmap------------ ");
+    // hashmap::hashmap_demo();
 
 
 }

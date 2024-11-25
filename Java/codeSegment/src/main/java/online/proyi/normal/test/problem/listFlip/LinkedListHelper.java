@@ -1,6 +1,6 @@
-package online.proyi.normal.test.listFlip;
+package online.proyi.normal.test.problem.listFlip;
 
-import online.proyi.normal.test.entity.Node;
+import online.proyi.normal.test.problem.entity.Node;
 
 import java.util.List;
 

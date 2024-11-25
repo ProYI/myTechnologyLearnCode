@@ -25,7 +25,7 @@ use num::complex::Complex;
 类型推导
  */
 
-pub fn baseType() {
+pub fn base_type() {
     //type annotations needed
     // let guess = "42".parse().expect("Not a number!");
 

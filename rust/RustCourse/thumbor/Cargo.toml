@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-axum = "0.6.1" # web服务器
+axum = "0.6.1"
 anyhow = "1" # 错误处理
 base64 = "0.20.0" # base 编码/解码
 bytes = "1" # 处理字节流

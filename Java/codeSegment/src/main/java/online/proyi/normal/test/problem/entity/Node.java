@@ -1,4 +1,4 @@
-package online.proyi.normal.test.entity;
+package online.proyi.normal.test.problem.entity;
 
 public class Node {
     private final int value;
