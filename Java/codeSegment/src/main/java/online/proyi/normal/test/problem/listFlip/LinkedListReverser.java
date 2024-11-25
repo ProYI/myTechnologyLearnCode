@@ -25,5 +25,8 @@ public class LinkedListReverser {
         Node.print(reverser.reverseLinkedList(LinkedListHelper.createLinkedList(Arrays.asList(1, 3, 5, 6, 7))));
         Node.print(reverser.reverseLinkedList(LinkedListHelper.createLinkedList(Arrays.asList(1))));
         Node.print(reverser.reverseLinkedList(LinkedListHelper.createLinkedList(new ArrayList<>())));
+
+        // StackOverflowError
+        // Node.print(reverser.reverseLinkedList(LinkedListHelper.createLargeLinkedList(10000)));
     }
 }

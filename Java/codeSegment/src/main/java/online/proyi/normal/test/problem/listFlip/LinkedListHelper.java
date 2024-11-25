@@ -15,4 +15,21 @@ public class LinkedListHelper {
         firstNode.setNext(next);
         return firstNode;
     }
+
+    public static Node createLargeLinkedList(int size) {
+        Node prev = null;
+        Node head = null;
+
+        for (int i = 0; i < size; i++) {
+            Node node = new Node(i);
+            if (prev != null) {
+                prev.setNext(node);
+            } else {
+                head = node;
+            }
+            prev = node;
+        }
+
+        return head;
+    }
 }
