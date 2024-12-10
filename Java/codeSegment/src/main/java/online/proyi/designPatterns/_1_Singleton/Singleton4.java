@@ -8,7 +8,7 @@ public class Singleton4 {
     private static Singleton4 instance;
 
     // 私有构造函数
-    public Singleton4() {
+    private Singleton4() {
     }
 
     /**k

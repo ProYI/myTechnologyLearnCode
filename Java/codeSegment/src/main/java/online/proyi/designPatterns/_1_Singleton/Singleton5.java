@@ -8,7 +8,7 @@ public class Singleton5 {
     private static Singleton5 instance;
 
     // 私有构造函数
-    public Singleton5() {
+    private Singleton5() {
     }
 
     public static Singleton5 getInstance() {

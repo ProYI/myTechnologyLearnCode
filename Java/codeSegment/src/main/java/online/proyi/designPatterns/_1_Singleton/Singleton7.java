@@ -7,7 +7,7 @@ package online.proyi.designPatterns._1_Singleton;
 public class Singleton7 {
 
     // 私有构造函数
-    public Singleton7() {
+    private Singleton7() {
     }
 
     /**

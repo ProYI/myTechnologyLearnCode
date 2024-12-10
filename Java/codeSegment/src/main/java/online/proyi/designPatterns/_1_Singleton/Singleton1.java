@@ -7,7 +7,7 @@ public class Singleton1 {
     private static Singleton1 instance;
 
     // 私有构造函数
-    public Singleton1() {
+    private Singleton1() {
     }
 
     // 静态工厂方法

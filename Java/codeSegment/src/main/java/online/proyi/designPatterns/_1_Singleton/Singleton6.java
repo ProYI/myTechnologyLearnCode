@@ -12,7 +12,7 @@ public class Singleton6 {
     private volatile static Singleton6 instance;
 
     // 私有构造函数
-    public Singleton6() {
+    private Singleton6() {
     }
 
     public static Singleton6 getInstance() {

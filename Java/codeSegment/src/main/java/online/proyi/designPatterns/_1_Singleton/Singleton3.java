@@ -5,7 +5,7 @@ package online.proyi.designPatterns._1_Singleton;
  * 静态代码块
  */
 public class Singleton3 {
-    public Singleton3() {
+    private Singleton3() {
     }
 
     private final static Singleton3 instance;
