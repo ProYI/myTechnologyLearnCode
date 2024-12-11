@@ -1,5 +1,8 @@
 package online.proyi.codeSegment.concurrency.deadLock;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadMXBean;
+
 /**
  * 死锁
  * 当DeadLock类的对象flag==1时（thread1），先锁定o1,睡眠1000毫秒
@@ -55,5 +58,26 @@ public class DeadLock implements Runnable {
         //thread1,thread2都处于可执行状态，但JVM线程调度先执行哪个线程是不确定的。
         //thread2的run()可能在thread2的run()之前运行
 
+        try {
+            Thread.sleep(5000);
+            detectDeadlocks();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    /**
+     * jvm提供的死锁检测工具
+     */
+    public static void detectDeadlocks() {
+        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
+        long[] deadlockedThreads = threadMXBean.findDeadlockedThreads();
+        if (deadlockedThreads != null && deadlockedThreads.length > 0) {
+            System.out.println("Deadlock detected!");
+            for (long threadId : deadlockedThreads) {
+                System.out.println("Thread ID: " + threadId);
+            }
+        }
     }
 }
