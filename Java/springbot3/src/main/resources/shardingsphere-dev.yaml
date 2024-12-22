@@ -1,0 +1,57 @@
+mode:
+  type: Standalone
+  repository:
+    type: JDBC
+props:
+  sql-show: true
+dataSources:
+  ds_0:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://localhost:3306/sharding0
+    username: root
+    password:
+rules:
+  - !SHARDING
+    tables: # 数据分片规则配置
+      tb_user: # 逻辑表名称
+        actualDataNodes: ds_0.tb_user_${0..1} # 由数据源名 + 表名组成（参考 Inline 语法规则）
+        tableStrategy: # 分表策略，同分库策略
+          standard: # 用于单分片键的标准分片场景
+            shardingColumn: id # 分片列名称
+            shardingAlgorithmName: tb_user_inline # 分片算法名称
+        keyGenerateStrategy: # 分布式序列策略
+          column: id # 自增列名称，缺省表示不使用自增主键生成器
+          keyGeneratorName: snowflake # 分布式序列算法名称
+        auditStrategy: # 分片审计策略
+          auditorNames: # 分片审计算法名称
+            - sharding_key_required_auditor
+          allowHintDisable: true # 是否禁用分片审计hint
+
+    defaultShardingColumn: # 默认分片列名称
+    bindingTables: # 绑定表规则列表
+      - tb_user
+    defaultTableStrategy: # 默认表分片策略
+      none:
+    defaultKeyGenerateStrategy: # 默认的分布式序列策略
+
+    # 分片算法配置
+    shardingAlgorithms:
+      tb_user_inline: # 分片算法名称
+        type: INLINE # 分片算法类型
+        props: # 分片算法属性配置
+          algorithm-expression: tb_user_$->{id % 2}
+          allow-range-query-with-inline-sharding: true
+    # 分布式序列算法配置
+    keyGenerators:
+      snowflake: # 分布式序列算法名称
+        type: SNOWFLAKE # 分布式序列算法类型
+        props:
+          worker-id: 0
+    auditors:
+      sharding_key_required_auditor:
+        type: DML_SHARDING_CONDITIONS
+
+  - !BROADCAST
+    tables: # 广播表规则列表
+      - t_address

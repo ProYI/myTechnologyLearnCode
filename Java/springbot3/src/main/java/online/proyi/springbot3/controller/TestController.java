@@ -1,4 +1,4 @@
-package online.proyi.springbot3.Controller;
+package online.proyi.springbot3.controller;
 
 import online.proyi.springbot3.entity.Student;
 import org.springframework.web.bind.annotation.GetMapping;
