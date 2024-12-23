@@ -3,3 +3,15 @@ spring:
   datasource:
     driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
     url: jdbc:shardingsphere:classpath:shardingsphere-dev.yaml?placeholder-type=environment
+
+springdoc:
+  swagger-ui:
+    path: /doc.html
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      display-name: 'dev'
+      paths-to-match: '/**'
+      packages-to-scan: online.proyi.springbot3
+  default-flat-param-object: true
