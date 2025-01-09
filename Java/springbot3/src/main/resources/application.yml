@@ -3,7 +3,13 @@ spring:
   datasource:
     driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
     url: jdbc:shardingsphere:classpath:shardingsphere-dev.yaml?placeholder-type=environment
-
+  ai:
+    ollama:
+      chat:
+        model: qwen2.5-coder:32b
+  thymeleaf:
+    prefix: classpath:/static/templates/
+    suffix: .html
 springdoc:
   swagger-ui:
     path: /doc.html
